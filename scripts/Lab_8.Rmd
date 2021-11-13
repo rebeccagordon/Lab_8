@@ -22,4 +22,7 @@ star <- read.csv(here("data", "star.csv"))
 
 
 ```
+```{r}
+view(star)
+```
 
