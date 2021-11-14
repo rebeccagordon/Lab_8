@@ -15,6 +15,7 @@ library(readr)
 library(haven)
 library(readxl)
 library(foreign)
+library(knitr)
 ```
 
 ```{r}
@@ -24,5 +25,18 @@ star <- read.csv(here("data", "star.csv"))
 ```
 ```{r}
 view(star)
+```
+```{r, Commit_3, results="asis"}
+
+star %>% 
+	group_by(sex, frl) %>%
+	summarize(math_mean = mean(tmathss),
+					math_sd = sd(tmathss),
+					rdg_mean = mean(treadss),
+					rdg_sd = sd(treadss)) %>%
+	knitr::kable(digits = 2,
+		booktabs = TRUE)
+
+
 ```
 
