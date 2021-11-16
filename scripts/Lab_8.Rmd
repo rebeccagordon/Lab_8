@@ -9,7 +9,9 @@ bibliography: references.bib
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
 											fig.width = 6.5,
-											fig.height = 8)
+											fig.height = 8,
+											warning = FALSE,
+											eval = FALSE)
 
 library(tidyverse)
 library(here)
@@ -20,6 +22,8 @@ library(readxl)
 library(foreign)
 library(knitr)
 library(tinytex)
+library(viridis)
+library(ggplot2)
 ```
 
 ```{r}
@@ -44,6 +48,18 @@ star %>%
 
 
 ```
+
+```{r, Commit_4}
+star$frl <- factor(star$frl, levels=c("yes", "no"), labels=c("Free/reduced Price Meals", "Paid Meals"))
+
+ggplot(star, aes(totexp, tmathss)) +
+	geom_point(size = .7, color = "grey") +
+	geom_smooth(aes(color = frl), method = "lm") +
+	labs(title = 'Relation between teacher experience and math scores', subtitle = 'Separate regression lines displayed by free/reduced price lunch status', x = 'Teacher Experience (years)', y = 'Total Math Scale Score', color = "Lunch status") +
+	theme(legend.position="bottom") +
+	scale_color_viridis(discrete=TRUE) 
+```
+
 
 Our first citation is @paruthi2016recommended and it includes the sleep recommendations for adolescents. Our second citation is @shochat2014functional and it discusses the consequences of inadequate sleep in adolescents. Our third citatin is @kokka2021exploring and it looks at how internet overuse in adolescents impacts their sleep outcomes. Our fourth citation is @anderson2018teens and it includes a statistic showing that 95 percent of U.S. adolescents (ages 13-17) either own or have exclusive access to a smartphone. Finally, our fifth citation is @rideout2015common and it includes the statistic that nearly half of adolescents' waking time (7.5 hours per day) is spent on screen media devices, not including time spent in school or doing homework. We used the @tidyversepackage on this assignment. 
 
