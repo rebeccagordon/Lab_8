@@ -1,6 +1,9 @@
 ---
 title: "Lab_8"
+author: "Rebecca Gordon, Heather Leonard, and Abbie Sanders"
+date: "11/15/2021"
 output: pdf_document
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -16,6 +19,7 @@ library(haven)
 library(readxl)
 library(foreign)
 library(knitr)
+library(tinytex)
 ```
 
 ```{r}
@@ -26,6 +30,7 @@ star <- read.csv(here("data", "star.csv"))
 ```{r}
 view(star)
 ```
+
 ```{r, Commit_3, results="asis"}
 
 star %>% 
@@ -39,4 +44,10 @@ star %>%
 
 
 ```
+
+Our first citation is @paruthi2016recommended and it includes the sleep recommendations for adolescents. Our second citation is @shochat2014functional and it discusses the consequences of inadequate sleep in adolescents. Our third citatin is @kokka2021exploring and it looks at how internet overuse in adolescents impacts their sleep outcomes. Our fourth citation is @anderson2018teens and it includes a statistic showing that 95 percent of U.S. adolescents (ages 13-17) either own or have exclusive access to a smartphone. Finally, our fifth citation is @rideout2015common and it includes the statistic that nearly half of adolescents' waking time (7.5 hours per day) is spent on screen media devices, not including time spent in school or doing homework. We used the @tidyversepackage on this assignment. 
+
+\newpage
+
+# References
 
