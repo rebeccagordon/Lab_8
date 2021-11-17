@@ -2,7 +2,10 @@
 title: "Lab_8"
 author: "Rebecca Gordon, Heather Leonard, and Abbie Sanders"
 date: "11/15/2021"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 bibliography: references.bib
 ---
 
@@ -10,8 +13,7 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = FALSE,
 											fig.width = 6.5,
 											fig.height = 8,
-											warning = FALSE,
-											eval = FALSE)
+											warning = FALSE)
 
 library(tidyverse)
 library(here)
